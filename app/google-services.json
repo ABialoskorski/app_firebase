@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "727295226094",
+    "firebase_url": "https://logindemo-350ba.firebaseio.com",
+    "project_id": "logindemo-350ba",
+    "storage_bucket": "logindemo-350ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727295226094:android:eeaec9205d21cb1d",
+        "android_client_info": {
+          "package_name": "com.example.android.logindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727295226094-242apho1dprvhhhpnf1qb2hh0cc82ufh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9_Fora-DOkiq99J9wvka-gvgDErNL1xY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727295226094:android:779e225172588bc2",
+        "android_client_info": {
+          "package_name": "com.example.artur.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727295226094-242apho1dprvhhhpnf1qb2hh0cc82ufh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9_Fora-DOkiq99J9wvka-gvgDErNL1xY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
