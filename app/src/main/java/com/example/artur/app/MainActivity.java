@@ -41,18 +41,18 @@ public class MainActivity extends AppCompatActivity {
         //FirebaseAuth user = firebaseAuth.getCurrentUser();
 
 
-       /* if (user != null){
+        /* if (user != null){
             finish();
             startActivity(new Intent(MainActivity.this, SecondActivity.class));
         }
-
+        */
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validate(Name.getText().toString(), Password.getText().toString());
             }
         });
-        */
+
 
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
