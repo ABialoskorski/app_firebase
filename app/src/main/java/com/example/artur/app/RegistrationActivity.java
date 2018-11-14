@@ -25,6 +25,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText UserEmail;
     private Button regButton;
     private TextView userLogin;
+
     private FirebaseAuth firebaseAuth;
 
 
@@ -62,6 +63,13 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegistrationActivity.this,MainActivity.class));
+            }
+        });
+
 
        /* Back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +84,7 @@ public class RegistrationActivity extends AppCompatActivity {
         UserEmail = (EditText) findViewById(R.id.etUserEmail);
         UserPassword = (EditText) findViewById(R.id.etUserPassword);
         regButton = (Button)findViewById(R.id.btnRegister);
+        userLogin = (TextView)findViewById(R.id.tvUserLogin);
     }
 
     private Boolean validate(){
@@ -86,7 +95,7 @@ public class RegistrationActivity extends AppCompatActivity {
         String email = UserEmail.getText().toString();
 
         if (name.isEmpty() || password.isEmpty() || email.isEmpty()){
-            Toast.makeText(this, "Please enter lacking details", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else{
             result = true;
         }

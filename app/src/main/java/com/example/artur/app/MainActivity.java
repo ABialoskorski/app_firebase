@@ -30,18 +30,18 @@ public class MainActivity extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.etPassword);
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.btnLogin);
-        userRegistration = (Button) findViewById(R.id.btnRegister);
+        userRegistration = (TextView) findViewById(R.id.tvRegister);
 
 
         Info.setText("Number of attempts remaining: 3");
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        /*
-        FirebaseAuth user = firebaseAuth.getCurrentUser();
-         */
 
-        if (user != null){
+        //FirebaseAuth user = firebaseAuth.getCurrentUser();
+
+
+       /* if (user != null){
             finish();
             startActivity(new Intent(MainActivity.this, SecondActivity.class));
         }
@@ -52,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 validate(Name.getText().toString(), Password.getText().toString());
             }
         });
+        */
 
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, com.example.artur.app.RegistrationActivity.class));
+                startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
     }
