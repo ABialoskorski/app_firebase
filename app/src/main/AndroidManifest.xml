@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".RegistrationActivity"></activity>
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".UpdateProfile" />
+        <activity android:name=".UpdatePassword"></activity>
     </application>
 
 </manifest>

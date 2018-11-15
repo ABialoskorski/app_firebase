@@ -10,17 +10,10 @@
     </item>
 
      <item
-        android:id="@+id/settingsMenu"
+        android:id="@+id/profileMenu"
         android:orderInCategory="200"
         app:showAsAction="never"
-        android:title="Settings">
-    </item>
-
-    <item
-        android:id="@+id/RefreshMenu"
-        android:orderInCategory="300"
-        app:showAsAction="never"
-        android:title="Refresh">
+        android:title="Profile">
     </item>
 
 
