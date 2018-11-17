@@ -26,9 +26,10 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText UserName;
     private EditText UserPassword;
     private EditText UserEmail;
+    private EditText UserNote;
     private Button regButton;
     private TextView userLogin;
-    String email, name, password;
+    String email, name, password, note;
 
     private FirebaseAuth firebaseAuth;
 
@@ -80,20 +81,15 @@ public class RegistrationActivity extends AppCompatActivity {
         });
 
 
-       /* Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent j = new Intent(RegistrationActivity.this,MainActivity.class);
-                startActivity(j);
-            }
-        }); */
     }
     private void setupUIViews() {
         UserName = (EditText) findViewById(R.id.etUserName);
         UserEmail = (EditText) findViewById(R.id.etUserEmail);
         UserPassword = (EditText) findViewById(R.id.etUserPassword);
+        UserNote = (EditText)findViewById(R.id.etUserNote);
         regButton = (Button)findViewById(R.id.btnRegister);
         userLogin = (TextView)findViewById(R.id.tvUserLogin);
+
     }
 
     private Boolean validate(){
@@ -102,8 +98,9 @@ public class RegistrationActivity extends AppCompatActivity {
         name = UserName.getText().toString();
         password =  UserPassword.getText().toString();
         email = UserEmail.getText().toString();
+        note = UserNote.getText().toString();
 
-        if (name.isEmpty() || password.isEmpty() || email.isEmpty()){
+        if (name.isEmpty() || password.isEmpty() || email.isEmpty() || note.isEmpty()){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else{
             result = true;
@@ -115,7 +112,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserProfile userProfile = new UserProfile(name);
+        UserProfile userProfile = new UserProfile(name, note);
         myRef.setValue(userProfile);
     }
 }

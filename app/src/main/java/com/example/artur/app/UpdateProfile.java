@@ -19,9 +19,10 @@ import com.google.firebase.database.ValueEventListener;
 public class UpdateProfile extends AppCompatActivity {
 
     private EditText newUserName;
+    private EditText newUserNote;
     private Button save;
     private FirebaseAuth firebaseAuth;
-    private  FirebaseDatabase firebaseDatabase;
+    private FirebaseDatabase firebaseDatabase;
 
 
     @Override
@@ -31,6 +32,7 @@ public class UpdateProfile extends AppCompatActivity {
 
         save = findViewById(R.id.btnSave);
         newUserName = findViewById(R.id.etNameUpdate);
+        newUserNote = findViewById(R.id.etNoteUpdate);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -45,6 +47,7 @@ public class UpdateProfile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 newUserName.setText(userProfile.getUserName());
+                newUserNote.setText(userProfile.getUserNote());
             }
 
             @Override
@@ -58,8 +61,9 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = newUserName.getText().toString();
+                String note = newUserNote.getText().toString();
 
-                UserProfile userProfile = new UserProfile(name);
+                UserProfile userProfile = new UserProfile(name,note);
 
                 databaseReference.setValue(userProfile);
 

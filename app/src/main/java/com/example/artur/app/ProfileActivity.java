@@ -22,8 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView profileName;
+    private TextView profileNote;
     private Button changePassword;
     private Button profileUpdate;
+    private Button profileUpdateNote;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
 
@@ -37,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         profileName = findViewById(R.id.tvProfileName);
+        profileNote = findViewById(R.id.tvProfileNote);
         profileUpdate = findViewById(R.id.btnUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
 
@@ -50,6 +53,8 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 profileName.setText("Name: " + userProfile.getUserName());
+                profileNote.setText("Note: " + userProfile.getUserNote());
+
             }
 
             @Override
@@ -64,7 +69,14 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, UpdateProfile.class));
             }
         });
-
+/*
+        profileUpdateNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, UpdateNote.class));
+            }
+        });
+*/
         changePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
